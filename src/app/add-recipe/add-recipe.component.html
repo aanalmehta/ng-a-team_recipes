@@ -1,1 +1,31 @@
-<p>add-recipe works!</p>
+<mat-card>
+    <!-- Title of an Card -->
+    <mat-card-title class="card-title">
+        Add New Recipe
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field class="demo-full-width">
+                <input matInput placeholder="Recipe Name" />
+            </mat-form-field>
+            <mat-form-field class="demo-full-width">
+                <input matInput placeholder="Image URL" />
+            </mat-form-field>
+            <mat-form-field class="demo-full-width">
+                <textarea matInput placeholder="Description" matTextareaAutosize matAutosizeMinRows="2"
+                    matAutosizeMaxRows="1"></textarea>
+            </mat-form-field>
+            <mat-form-field class="demo-full-width">
+                <mat-select placeholder="Veg/Non-veg" [(value)]="selected">
+                    <mat-option>-- Select Any --</mat-option>
+                    <mat-option value="1">Vegeterian</mat-option>
+                    <mat-option value="2">Non-Vegeterian</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="demo-full-width">
+                <input matInput placeholder="Chef/Author">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="button-add-recipe">Add Recipe</button>
+        </form>
+    </mat-card-content>
+</mat-card>
