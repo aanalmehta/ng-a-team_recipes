@@ -1,4 +1,35 @@
 <div class="background">
   <h1 class="title">Welcome to My Recipes</h1>
-  <app-add-recipe></app-add-recipe>
+  <div class="sub-title-background" (click)="selectedTab(1)">
+    <h3 class="sub-title">Checkout our list of Recipes...</h3>
+  </div>
+  <div class="sub-title-background" (click)="selectedTab(2)">
+      <h3 class="sub-title">Want to add new Recipe?</h3>
+  </div>
+  <div *ngIf="isDetailsSelected; else addRecipe">
+    <app-recipe-list></app-recipe-list>
+    <mat-grid-list cols="4" rowHeight="500px" gutterSize="10px">
+      <mat-grid-tile *ngFor="let recipe of recipes">
+        <mat-card class="tp-card">
+          <mat-card-header>
+            <mat-card-title class="card-header">{{recipe.name}}</mat-card-title>
+          </mat-card-header>
+          <img class="card-image" mat-card-image [src]="recipe.image">
+          <mat-card-content>
+            <div class="card-text-content">
+              <b>Chef:</b> {{recipe.chef}}
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">View Details</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <ng-template #addRecipe>
+    <div>
+      <app-add-recipe></app-add-recipe>
+    </div>
+  </ng-template>
 </div>

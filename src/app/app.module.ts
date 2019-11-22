@@ -4,14 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatTextareaAutosize, MatSelect, MatOptionModule, MatSelectModule, MatCardModule, MatToolbarModule, MatDatepickerModule, MatRadioModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatTextareaAutosize, MatSelect, MatOptionModule, MatSelectModule, MatCardModule, MatToolbarModule, MatDatepickerModule, MatRadioModule, MatNativeDateModule, MatButtonModule, MatListModule, MatIconModule, MatCardAvatar, MatGridListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { RecipeListComponent } from './recipe-list/recipe-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,10 @@ import { ReactiveFormsModule } from '@angular/forms'
     MatDatepickerModule,
     MatRadioModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
