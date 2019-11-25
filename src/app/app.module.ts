@@ -8,12 +8,14 @@ import { MatFormFieldModule, MatInputModule, MatTextareaAutosize, MatSelect, Mat
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeListComponent } from './recipe-list/recipe-list.component'
+import { VegNonVegTypeDirective } from './directives/VegNonVegTypeDirective';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddRecipeComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    VegNonVegTypeDirective
   ],
   imports: [
     BrowserModule,

@@ -55,10 +55,3 @@ p {
 .tp-header-image {
     background-size: cover;
 }
-
-.card-header {
-    font-weight: bold;
-    font-family: monospace;
-    color: white;
-    text-align: center;
-}
