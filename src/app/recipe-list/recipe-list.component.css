@@ -1,0 +1,18 @@
+.tp-card {
+    max-width: 300px;
+ }
+
+ .card-image {
+    max-width: 300px;
+    max-height: 250px;
+ }
+
+ .card-text-content {
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.mat-card {
+    background-color: black;
+ }

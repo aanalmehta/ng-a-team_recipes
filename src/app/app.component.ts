@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Recipe } from './model/Recipe';
 
 @Component({
   selector: 'app-root',
@@ -59,4 +60,7 @@ export class AppComponent {
     this.isDetailsSelected = (selectedTab == 1) ? true : false;
   }
 
+  addRecipe(recipe: Recipe) {
+    this.recipes.push({name: recipe.name, chef: recipe.chef, image: recipe.image, type: recipe.type,description: recipe.description})
+  }
 }
