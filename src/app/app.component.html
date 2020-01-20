@@ -1,4 +1,4 @@
-<div class="background">
+<!-- <div class="background">
   <h1 class="title">Welcome to My Recipes</h1>
   <div class="sub-title-background" (click)="selectedTab(1)">
     <h3 class="sub-title">Checkout our list of Recipes...</h3>
@@ -13,4 +13,26 @@
     <app-add-recipe (recipeAdded)="addRecipe($event)"></app-add-recipe>
   </div>
 </ng-template>
-</div>
+</div> -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+    <h1>My Recipes</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/home'">  Home  </a>
+      <a mat-button [routerLink]="'/recipes'">  All Recipes  </a>
+      <a mat-button [routerLink]="'/add-new'">  Add Recipe  </a>
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div *ngIf="isDetailsSelected; else addRecipes"></div>
+  <app-recipe-list [recipes]="recipes"></app-recipe-list>
+<ng-template #addRecipes>
+  <div>
+    <app-add-recipe (recipeAdded)="addRecipe($event)"></app-add-recipe>
+  </div>
+</ng-template>

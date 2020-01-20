@@ -9,13 +9,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeListComponent } from './recipe-list/recipe-list.component'
 import { VegNonVegTypeDirective } from './directives/VegNonVegTypeDirective';
+import { LoginComponent } from './authentication/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { LoggerService } from './services/logger.service';
+import { RecipeManagerService } from './recipe-list/recipe-manager.service';
+import { RecipeResolver } from './recipe-list/recipe-resolver.service';
+import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddRecipeComponent,
     RecipeListComponent,
-    VegNonVegTypeDirective
+    VegNonVegTypeDirective,
+    LoginComponent,
+    HomeComponent,
+    RecipeCellComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +48,10 @@ import { VegNonVegTypeDirective } from './directives/VegNonVegTypeDirective';
     MatButtonModule,
     MatListModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService, RecipeResolver, RecipeManagerService, LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
