@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../model/Recipe';
 import {  } from 'events';
+import { RecipeManagerService } from '../recipe-list/recipe-manager.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-recipe',
@@ -12,19 +14,21 @@ export class AddRecipeComponent implements OnInit {
   recipeAdded: EventEmitter<Recipe> = new EventEmitter();
   recipe: Recipe = null;
 
-  constructor() { }
+  constructor(private recipeManagerService: RecipeManagerService, private router:Router) { }
 
   ngOnInit() {
   }
 
   addRecipe(recipe) {
-    this.recipe = {
+    recipe = {
       name : recipe.name,
       chef : recipe.chef,
       type: "v",
       image : recipe.image,
-      description : recipe.description
+      description : recipe.description,
+      isFavourite: false
     }
-    this.recipeAdded.emit(this.recipe);
+    this.recipeManagerService.addRecipe(recipe)
+    this.router.navigateByUrl('/recipes');
   }
 }

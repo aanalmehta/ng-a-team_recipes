@@ -7,9 +7,10 @@ import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './services/auth-guard.service'
 import { RecipeResolver } from './recipe-list/recipe-resolver.service';
+import { LoginComponent } from './authentication/login/login.component';
 
 const appRoute: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'add-new', component: AddRecipeComponent, canActivate: [AuthGuard] },
   {

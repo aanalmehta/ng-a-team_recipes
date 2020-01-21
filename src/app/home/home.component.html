@@ -1,9 +1,31 @@
-<div class="container mt-3">
-    Header
-    <ul>
-      <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</li>
-      <li routerLink="/add-new" routerLinkActive="active">Add New</li>
-    </ul>
-    <router-outlet></router-outlet>
-    Footer
-  </div>
+<div>
+    <div class="row">
+        <form class="container">
+            <input matInput type="text" placeholder="Search Recipe" name="name" [(ngModel)]="term" />
+        </form>
+        <h1 style="text-align: center; font-size: 50px">Favourites</h1>
+        <mat-grid-list cols="4" rowHeight="600px" gutterSize="10px">
+            <mat-grid-tile *ngFor="let recipe of recipes| filter:term">
+
+                <mat-card foodType foodType='{{recipe.type}}' class="tp-card">
+                    <mat-card-header>
+                        <mat-card-title class="card-header">{{recipe.name}}</mat-card-title>
+                    </mat-card-header>
+                    <img class="card-image" mat-card-image [src]="recipe.image">
+                    <mat-card-content>
+                        <div class="card-text-content">
+                            <b>Chef:</b> {{recipe.chef}}
+                        </div>
+                        <div class="card-text-description">
+                            {{recipe.description}}
+                        </div>
+                    </mat-card-content>
+                    <!-- <mat-card-actions>
+                    <button mat-raised-button color="primary">View Details</button>
+                </mat-card-actions> -->
+                </mat-card>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

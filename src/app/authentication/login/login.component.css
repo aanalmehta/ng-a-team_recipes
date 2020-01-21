@@ -1,0 +1,62 @@
+.mat-card {
+    text-align: -webkit-center;
+}
+
+.demo-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.demo-full-width {
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.card-title {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: monospace;
+    background: linear-gradient(to right, red 20%, orange 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    margin: 0;
+    font-family: monospace;
+}
+
+mat-card {
+    max-width: 30%;
+    margin: 2em auto;
+    text-align: center;
+    opacity: 0.7;
+}
+
+mat-toolbar-row {
+    justify-content: space-between;
+}
+
+.done {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+}
+
+.content-center {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-add-recipe {
+    text-align: -webkit-center;
+    color: white;
+    font-size: 20px;
+    font-family: monospace;
+}

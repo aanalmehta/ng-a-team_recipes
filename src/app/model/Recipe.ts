@@ -3,5 +3,6 @@ export interface Recipe {
     chef: string,
     image: string,
     type: string,
-    description: string
+    description: string,
+    isFavourite: boolean
 }

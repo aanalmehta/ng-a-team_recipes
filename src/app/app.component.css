@@ -55,3 +55,19 @@ p {
 .tp-header-image {
     background-size: cover;
 }
+
+.mat-toolbar {
+    background: #ec510a;
+    color: #fff;
+}
+
+.menu-spacer {
+    font-family: Verdana;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    border: #B1B1B1 solid;
+    border-width: 0 1px 0 0;
+    padding: 10px 17px 10px 12px;
+}

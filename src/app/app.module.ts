@@ -19,6 +19,7 @@ import { RecipeManagerService } from './recipe-list/recipe-manager.service';
 import { RecipeResolver } from './recipe-list/recipe-resolver.service';
 import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatListModule,
     MatIconModule,
     MatGridListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule
   ],
   providers: [AuthGuard, AuthService, RecipeResolver, RecipeManagerService, LoggerService],
   bootstrap: [AppComponent]

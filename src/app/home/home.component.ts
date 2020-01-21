@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeManagerService } from '../recipe-list/recipe-manager.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  recipes = []
+  constructor(private recipeManagerService: RecipeManagerService) { }
 
   ngOnInit() {
+    this.recipes = this.recipeManagerService.getFavouriteRecipes();
   }
 
 }
