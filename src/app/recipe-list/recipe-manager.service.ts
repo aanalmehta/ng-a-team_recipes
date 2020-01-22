@@ -75,4 +75,12 @@ export class RecipeManagerService {
     }
     return this.favRecipes
   }
+
+  updateRecipeList(id) {
+    var isFav = this.recipes[id].isFavourite
+    this.recipes[id].isFavourite = !isFav
+    if (isFav)
+      this.favRecipes.push(this.recipes[id])
+    else this.favRecipes.splice(id, 1)
+  }
 }

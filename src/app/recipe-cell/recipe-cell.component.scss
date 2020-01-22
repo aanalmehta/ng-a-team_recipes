@@ -1,6 +1,42 @@
 .nv {
-  background-color: red;
-  display: inline-block;
-  height: 15px;
-  width: 15px;
+    background-color: red;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+
+.v {
+    background-color: green;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+
+.card-image {
+    max-width: 350px;
+    max-height: 220px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.card-title {
+    color: black;
+    font-family: monospace;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0%;
+}
+
+.card-text {
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.fav-icon {
+    color: brown;
+    font-size: 50px;
 }

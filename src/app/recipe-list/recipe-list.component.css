@@ -69,3 +69,7 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
+
+.mat-grid-tile .mat-figure {
+    justify-content: flex-start !important;
+}

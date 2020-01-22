@@ -1,27 +1,21 @@
 <div>
-    <div class="row">
-        <mat-grid-list cols="4" rowHeight="600px" gutterSize="10px">
-            <mat-grid-tile *ngFor="let recipe of recipes">
-
-                <mat-card foodType foodType='{{recipe.type}}' class="tp-card">
-                    <mat-card-header>
-                        <mat-card-title class="card-header">{{recipe.name}}</mat-card-title>
-                    </mat-card-header>
-                    <img class="card-image" mat-card-image [src]="recipe.image">
-                    <mat-card-content>
-                        <div class="card-text-content">
-                            <b>Chef:</b> {{recipe.chef}}
-                        </div>
-                        <div class="card-text-description">
-                            {{recipe.description}}
-                        </div>
-                    </mat-card-content>
-                    <!-- <mat-card-actions>
-                    <button mat-raised-button color="primary">View Details</button>
-                </mat-card-actions> -->
-                </mat-card>
-
-            </mat-grid-tile>
-        </mat-grid-list>
-    </div>
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <mat-list style="width: 80%;background-color:whitesmoke; margin:30px">
+                <h1 style="color: black; text-align: center">All Recipes</h1>
+                <mat-divider></mat-divider>
+                <mat-list-item (click)="getRecipeDetail($event, recipe)" *ngFor="let recipe of recipes">
+                    <img src="{{recipe.type == 'v' && './assets/images/veg.png' || './assets/images/nonveg.png'}}" />
+                    <h4 mat-line>🍳Recipe Name: {{recipe.name}}</h4>
+                    <h4 mat-line>👨‍🍳Chef Name: {{recipe.chef}}</h4>
+                    <mat-divider></mat-divider>
+                </mat-list-item>
+            </mat-list>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div style="background-color:whitesmoke; margin:30px; padding: 30px; align-items: center;justify-content: center">
+                <app-recipe-cell [recipe]="recipe"></app-recipe-cell>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
