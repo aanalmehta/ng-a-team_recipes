@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class RecipeCellComponent implements OnInit, OnDestroy {
   @Input() recipe;
   private paramSubs: Subscription;
-  recipeId = 0;
+  recipeId 
 
   constructor(
     private recipeManagerService: RecipeManagerService,
@@ -19,13 +19,9 @@ export class RecipeCellComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    var id = this.route.snapshot.params.id;
+    let id = this.route.snapshot.paramMap.get('id');
     this.recipeId = id;
-    console.log("ID === ", id);
     if (id) {
-      // this.route.data.subscribe((data) => {
-      //   this.recipe = data.recipe;
-      // });
       this.recipe = this.recipeManagerService.getRecipe(id);
       this.paramSubs = this.route.params.subscribe((params) => {
         this.recipe = this.recipeManagerService.getRecipe(params.id);
@@ -42,7 +38,6 @@ export class RecipeCellComponent implements OnInit, OnDestroy {
   }
 
   setFavourite(isFavourite: boolean) {
-    console.log("IsFav == " + isFavourite + " recipeId " + this.recipeId);
-    this.recipeManagerService.updateRecipeList(this.recipeId)
+    this.recipeManagerService.updateRecipeList()
   }
 }

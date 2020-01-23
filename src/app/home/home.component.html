@@ -3,8 +3,8 @@
         <form class="container">
             <input matInput type="text" placeholder="Search Recipe" name="name" [(ngModel)]="term" />
         </form>
-        <h1 style="text-align: center; font-size: 50px">Favourites</h1>
-        <mat-grid-list cols="4" rowHeight="600px" gutterSize="10px">
+        <h1 style="text-align: center; font-size: 50px">My Favourites</h1>
+        <mat-grid-list style="margin: 20px" cols="4" rowHeight="600px" gutterSize="10px">
             <mat-grid-tile *ngFor="let recipe of recipes| filter:term">
 
                 <mat-card foodType foodType='{{recipe.type}}' class="tp-card">

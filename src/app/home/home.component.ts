@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private recipeManagerService: RecipeManagerService) { }
 
   ngOnInit() {
+    console.log('====Home onInit');
+    
     this.recipes = this.recipeManagerService.getFavouriteRecipes();
   }
 

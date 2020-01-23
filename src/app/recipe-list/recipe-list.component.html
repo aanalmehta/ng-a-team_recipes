@@ -2,12 +2,12 @@
     <mat-grid-list cols="2">
         <mat-grid-tile>
             <mat-list style="width: 80%;background-color:whitesmoke; margin:30px">
-                <h1 style="color: black; text-align: center">All Recipes</h1>
+                <h1 style="color: black; text-align: center; font-family: monospace; font-size: 40px">All Recipes</h1>
                 <mat-divider></mat-divider>
                 <mat-list-item (click)="getRecipeDetail($event, recipe, i)" *ngFor="let recipe of recipes;let i = index">
                     <img src="{{recipe.type == 'v' && './assets/images/veg.png' || './assets/images/nonveg.png'}}" />
                     <h4 mat-line>🍳Recipe Name: {{recipe.name}}</h4>
-                    <h4 mat-line>👨‍🍳Chef Name: {{recipe.chef}}</h4>
+                    <h4 mat-line>👨‍🍳Chef: {{recipe.chef}}</h4>
                     <mat-divider></mat-divider>
                 </mat-list-item>
             </mat-list>
