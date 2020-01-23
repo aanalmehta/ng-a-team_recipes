@@ -17,11 +17,13 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
     this.recipes = this.recipeManagerService.recipes;
+    this.router.navigate(['recipes', 0])
   }
 
-  getRecipeDetail(event, newValue) {
+  getRecipeDetail(event, newValue, index) {
     console.log(newValue);
-    this.recipe = newValue;
+    // this.recipe = newValue;
+    this.router.navigate(['recipes', index])
     // this.selectedItem = newValue;  // don't forget to update the model here
     // ... do other stuff here ...
 }

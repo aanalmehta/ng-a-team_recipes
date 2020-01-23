@@ -19,7 +19,7 @@ export class RecipeCellComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id;
+    var id = this.route.snapshot.params.id;
     this.recipeId = id;
     console.log("ID === ", id);
     if (id) {
@@ -43,6 +43,6 @@ export class RecipeCellComponent implements OnInit, OnDestroy {
 
   setFavourite(isFavourite: boolean) {
     console.log("IsFav == " + isFavourite + " recipeId " + this.recipeId);
-    this.recipeManagerService.updateRecipeList(this.recipeId ? this.recipeId : 0)
+    this.recipeManagerService.updateRecipeList(this.recipeId)
   }
 }
